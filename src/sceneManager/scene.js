@@ -20,9 +20,9 @@ export default class SceneManager {
         window.addEventListener('resize', () => this.onWindowsResize(), false);
 
         const camera = new THREE.PerspectiveCamera(75 ,window.innerWidth / window.innerHeight,0.1,1000);
-        camera.position.z = 20;
-        camera.position.y = 5;
-        camera.lookAt(0,0,0);
+        // camera.position.z = 1;
+        // camera.position.y = 5;
+        // camera.lookAt(0,0,0);
 
         //init stats
         let stats = new Stats();
@@ -58,7 +58,7 @@ export default class SceneManager {
 
     addOrbitControl(){
         const controls = new OrbitControls(this.camera, this.canvas);
-        controls.target.set(0, 0, 0);
+        controls.target.set(0, 0, 1);
         controls.enableDamping = true;
         controls.update();
         return controls;
